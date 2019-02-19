@@ -1,4 +1,4 @@
-package controllers
+package hero
 
 import "github.com/jinzhu/gorm"
 

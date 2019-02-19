@@ -1,14 +1,15 @@
-package controllers
+package hero
 
 import (
-	"../model"
+	"../../model"
 	"github.com/gin-gonic/gin"
 	"log"
 	"net/http"
 	"strconv"
 )
 
-func (idb *InDB) GetAllHero (context *gin.Context){
+func(idb *InDB) GetAllHero(context *gin.Context){
+
 	var (
 		heroes []model.Hero
 		result gin.H
@@ -44,7 +45,7 @@ func (idb *InDB) GetAllHeroWithMapping (c *gin.Context)  {
 			//simple definition forEach in GO --> https://stackoverflow.com/questions/7782411/is-there-a-foreach-loop-in-go
 			idb.DB.Table("category_hero").Find(&categoryHero, "id = "+strconv.Itoa(item.IdCategoryHero))
 			heroesDto = append(heroesDto, model.HeroDTO{
-				Pengenal:       item.Id,
+				//Pengenal:       item.Id,
 				Jeneng_hero:    item.Name,
 				Jenis_serangan: item.Atk_type,
 				CategoryHero:   categoryHero.Category_name})

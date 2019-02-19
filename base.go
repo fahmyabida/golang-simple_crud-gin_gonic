@@ -3,18 +3,20 @@ package main
 import (
 	"./config"
 	"./controllers"
+	"./controllers/hero"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
 )
 
 func main() {
 	db := config.DBInit()
-	inDB := &controllers.InDB{DB: db}
+	inDBHero := &hero.InDB{DB: db}
 	router := gin.Default()
-	router.GET("/hello", controllers.Hello)
-	router.GET("/heroes", inDB.GetAllHero)
-	router.GET("/heroes/mapping", inDB.GetAllHeroWithMapping)
-	router.GET("/customheroes", inDB.CustomGetAllHero)
-	router.POST("/hero", inDB.CreateHeroWithPostForm)
+	router.GET("/hello", controllers.HelloWorld)
+	router.GET("/heroes", inDBHero.GetAllHero)
+	router.GET("/heroes/mapping", inDBHero.GetAllHeroWithMapping)
+	router.GET("/customheroes", inDBHero.CustomGetAllHero)
+	router.POST("/hero", inDBHero.CreateHero)
+	router.POST("/hero2", inDBHero.CreateHeroWithPostForm)
 	router.Run(":8080")
 }

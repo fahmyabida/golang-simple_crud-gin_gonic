@@ -11,10 +11,6 @@ func DBInit() *gorm.DB {
 	if err != nil {
 		panic("failed to connect to database")
 	}
-	//defer db.Close()
-	//db.Model(&model.Hero{}).Related(&model.CategoryHero{}, "fk_id_category_hero")
-	// #AutoCreate Table in DB
-	//db.AutoMigrate(&model.Car{}, &model.Person{})
 	db.LogMode(true)
 	return db
 }
