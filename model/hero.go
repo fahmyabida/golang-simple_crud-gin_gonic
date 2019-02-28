@@ -1,25 +1,19 @@
 package model
 
 type Hero struct {
-	Id 					int 	`gorm:"AUTO_INCREMENT" form:"id" json:"-"`
-	Name				string 	`gorm:"column:name"`
-	Atk_type			string
-	IdCategoryHero		int 	`gorm:"column:id_category_hero"`
+	Id             int		`json:"id"`
+	Name           string	`json:"name"`
+	Atk_type       string	`json:"attack_type"`
+	IdCategoryHero int		`json:"id_category_hero"`
 }
 
-func (Hero) TableName() string {
-	return "hero"
+type HeroDelete struct {
+	Id				string 	`json:"id_hero"`
 }
 
 type HeroDTO struct {
-	Pengenal 		int
-	Jeneng_hero		string
-	Jenis_serangan	string
-	CategoryHero	string
-}
-
-type PostHero struct {
-	Jeneng_hero	string
-	Jenis_serangan	string
-	CategoryHero	string
+	Id             	int				`json:"id"`
+	Name           	string			`json:"name"`
+	Atk_type       	string			`json:"attack_type"`
+	CategoryHero 	CategoryHero	`json:"category_hero"`
 }

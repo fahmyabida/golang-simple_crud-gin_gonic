@@ -1,10 +1,6 @@
 package model
 
 type CategoryHero struct {
-	Id				int
-	Category_name	string
-}
-
-func (CategoryHero) TableName() string {
-	return "category_hero"
+	Id            int		`json:"id"`
+	Category_name string	`json:"category_name"`
 }
