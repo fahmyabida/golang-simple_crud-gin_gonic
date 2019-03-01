@@ -1,9 +1,8 @@
 package controllers
 
 import (
-	_ "../config"
-	"../handler"
-	"../model"
+	"github.com/me/golang-simple_crud-gin_gonic/handler"
+	"github.com/me/golang-simple_crud-gin_gonic/model"
 	"database/sql"
 	"github.com/gin-gonic/gin"
 	"log"

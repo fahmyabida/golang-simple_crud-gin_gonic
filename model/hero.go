@@ -1,16 +1,16 @@
 package model
 
 type Hero struct {
-	Id             	int		`json:"id"`
-	Name           	string	`json:"name"`
-	Atk_type       	string	`json:"attack_type"`
-	IdCategoryHero 	int		`json:"id_category_hero"`
+	Id				int		`json:"id"`
+	Name			string	`json:"name"`
+	Atk_type 		string	`json:"attack_type"`
+	IdCategoryHero	int		`json:"id_category_hero"`
 }
 
 type HeroPostDTO struct {
-	Name           	string	`json:"name"`
-	Atk_type       	string	`json:"attack_type"`
-	IdCategoryHero 	string		`json:"id_category_hero"`
+	Name			string	`json:"name"`
+	Atk_type 		string	`json:"attack_type"`
+	IdCategoryHero 	string	`json:"id_category_hero"`
 }
 
 type HeroDeleteDTO struct {
@@ -18,10 +18,10 @@ type HeroDeleteDTO struct {
 }
 
 type HeroGetDTO struct {
-	Id             	int				`json:"id"`
-	Name           	string			`json:"name"`
-	Atk_type       	string			`json:"attack_type"`
-	CategoryHero 	CategoryHero	`json:"category_hero"`
+	Id 				int				`json:"id"`
+	Name			string			`json:"name"`
+	Atk_type		string			`json:"attack_type"`
+	CategoryHero	CategoryHero	`json:"category_hero"`
 }
 
 func (h *Hero) SetName(name string) {
